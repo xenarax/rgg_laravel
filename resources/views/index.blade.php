@@ -1,21 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>View Template that use Bootstrap</title>
-
-    <!-- Referencing Bootstrap CSS that is hosted locally -->
-    {{--{{!! Html::style('assets/css/bootstrap.min.css') !!}}--}}
-    <link rel="stylesheet" href="{{ 'assets/css/bootstrap.min.css' }}">
-</head>
-<body>
-@section('sidebar')
-    @show
-<h1>Testing!</h1>
+@extends('layouts.master')
 <div class="container">
-    @yield('content')
+    @section('table')
+        <div class="panel panel-primary">
+            <div class="panel panel-heading">
+                <h3 class="panel-title">
+                    <span class="badge"></span>
+                    To-do List
+                </h3>
+            </div>
+            <div class="panel panel-body">
+                <table class="table table-striped">
+                    
+                </table>
+            </div>
+        </div>
+    @show
 </div>
-</body>
-</html>
