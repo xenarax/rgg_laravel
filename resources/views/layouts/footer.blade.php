@@ -1,12 +1,3 @@
-<!-- jQuery -->
-<script src={{ 'assets/js/jquery.min.js' }}></script>
-
-<!-- Bootstrap Core JavaScript -->
-<script src={{ 'assets/js/bootstrap.min.js' }}></script>
-
-<!-- Customized stuffs -->
-
-
 {{--<!-- Plugin JavaScript -->--}}
 {{--<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>--}}
 {{--<script src="js/classie.js"></script>--}}

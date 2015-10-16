@@ -1,18 +1,18 @@
 @extends('layouts.master')
-<div class="container">
-    @section('table')
+
+@section('content')
+    <div class="container">
         <div class="panel panel-primary">
             <div class="panel panel-heading">
                 <h3 class="panel-title">
                     <span class="badge"></span>
-                    To-do List
+                    TechRepublic Post
                 </h3>
             </div>
             <div class="panel panel-body">
-                <table class="table table-striped">
-                    
-                </table>
+                @include('table')
             </div>
         </div>
-    @show
-</div>
+        @include('form')
+    </div>
+@endsection
