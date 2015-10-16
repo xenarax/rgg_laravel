@@ -34,6 +34,10 @@ class IndexController extends Controller
      */
     public function create($title, $description)
     {
+//        $title = $details->title;
+//        $description = $details->description;
+//        $status = "Not";
+
         $status = "Not";
 
         $items = new items;
