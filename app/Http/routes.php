@@ -15,8 +15,13 @@
 //    return view('welcome');
 //});
 
-Route::get('/', function() {
-    return view('index');
-});
+//Route::get('/', function() {
+//    return view('index');
+//});
 
-Route::get('home/', 'IndexController@show');
+Route::get('/', 'IndexController@show');
+
+
+//Create and destroy item routing
+Route::get('createItem/{title}', 'IndexController@create');
+Route::get('deleteItem/{id}', 'IndexController@destroy');
