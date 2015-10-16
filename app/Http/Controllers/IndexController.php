@@ -2,14 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Items;
+use App\Item;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use DB;
 use BaseController;
-use View;
-use App\Http\Controllers\Controller;
 use Form;
+use Redirect;
 
 class IndexController extends Controller
 {
@@ -21,10 +20,8 @@ class IndexController extends Controller
     public function index()
     {
         //
-        $items = Items::all();
-        return View::make('index',
-            ['items' => $items]
-        );
+        $items = Item::all();
+        return view('index', ['items' => $items]);
     }
 
     /**
@@ -38,14 +35,13 @@ class IndexController extends Controller
         $description = $details->get('description');
         $status = "Not";
 
-        $items = new items;
+        $items = new Item;
         $items->title = $title;
         $items->description = $description;
         $items->status = $status;
         $items->save();
-//        echo "Created " . $title;
-        return $this->index();
 
+        return redirect('/');
     }
 
 
@@ -57,7 +53,7 @@ class IndexController extends Controller
      */
     public function destroy($id)
     {
-        $items = Items::find($id); //select the book using primary id
+        $items = Item::find($id); //select the book using primary id
         $title = $items->title;
         $items->delete();;
 
