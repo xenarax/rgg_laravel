@@ -16,13 +16,9 @@
 //});
 
 Route::get('/', 'IndexController@index');
-//Route::get('/', 'IndexController@show');
 
-
-//Create and destroy item routing
-Route::post('createItem', 'IndexController@create');
+/**
+ * Create and destroy item routing
+ */
+Route::post('create', 'IndexController@create');
 Route::get('deleteItem/{id}', 'IndexController@destroy');
-
-//Route::get('/createItem', 'IndexController@create', function() {
-//    return redirect('index');
-//});
