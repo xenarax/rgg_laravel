@@ -38,12 +38,10 @@ class IndexController extends Controller
 //        $description = $details->description;
 //        $status = "Not";
 
-        $title = $details;
-        $description = "Default";
         $status = "Not";
 
         $items = new items;
-        $items->title = $details;
+        $items->title = $title;
         $items->description = $description;
         $items->status = $status;
         $items->save();
