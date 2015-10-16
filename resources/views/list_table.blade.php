@@ -17,12 +17,19 @@
                 <td>{{$item->description}}</td>
                 <td>
                     @if ($item->status == "Done")
-                        <input type="checkbox" name="isChecked" value="{{$item->id}}" checked>
+                        <input type="checkbox" name="isChecked" id="{{$item->id}}" class="checkBox" value="{{$item->id}}" checked>
                     @else
-                        <input type="checkbox" name="isChecked" value="{{$item->id}}">
+                        <input type="checkbox" name="isChecked" id="{{$item->id}}" class="checkBox" value="{{$item->id}}">
                     @endif
                 </td>
             </tr>
         @endforeach
     </tbody>
 </table>
+
+
+<script>
+    $(".checkBox").click(function(){
+        
+    });
+</script>
