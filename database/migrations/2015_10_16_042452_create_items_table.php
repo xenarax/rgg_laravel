@@ -13,10 +13,12 @@ class CreateItemsTable extends Migration
     public function up()
     {
         Schema::create('items', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
+
             $table->increments('id');
-            $table->string('title');
-            $table->string('description');
-            $table->string('status');
+            $table->string('title', 255);
+            $table->string('description', 255);
+            $table->string('status', 255);
             $table->timestamps();
         });
     }
