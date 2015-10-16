@@ -32,11 +32,12 @@ class IndexController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create($title, $description)
+    public function create(Request $details)
     {
-//        $title = $details->title;
-//        $description = $details->description;
+        $title = $details->get('title');
+        $description = $details->get('description');
 //        $status = "Not";
+
 
         $status = "Not";
 
@@ -47,7 +48,10 @@ class IndexController extends Controller
         $items->save();
 
         echo "Created " . $title;
-        return View::make('index');
+
+        return $this->index();
+//        redirect('index');
+//        return View::make('index');
     }
 
 

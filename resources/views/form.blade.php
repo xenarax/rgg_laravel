@@ -1,5 +1,6 @@
-{!! Form::open(array('url' => 'createItem', 'id' => 'formCreate', 'name' => 'formCreate', 'method' => 'get')) !!}
+{!! Form::open(array('url' => 'createItem', 'id' => 'formCreate', 'name' => 'formCreate', 'method' => 'post')) !!}
 {{--{!! Form::open(array('url' => '#', 'id' => 'formCreate', 'name' => 'formCreate', 'method' => 'get')) !!}--}}
+{{--{!! Form::open(array('url' => 'createItem','action' => 'IndexController@create', 'id' => 'formCreate', 'name' => 'formCreate', 'method' => 'post')) !!}--}}
 
 <div class="form-group">
     {!! Form::Label('title', 'Title: ') !!}

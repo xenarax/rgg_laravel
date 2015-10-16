@@ -20,5 +20,9 @@ Route::get('/', 'IndexController@index');
 
 
 //Create and destroy item routing
-Route::get('createItem/?title={title}&description={description}', 'IndexController@create');
+Route::post('createItem', 'IndexController@create');
 Route::get('deleteItem/{id}', 'IndexController@destroy');
+
+//Route::get('/createItem', 'IndexController@create', function() {
+//    return redirect('index');
+//});
