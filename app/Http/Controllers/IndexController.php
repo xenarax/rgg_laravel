@@ -19,6 +19,10 @@ class IndexController extends Controller
     public function index()
     {
         //
+        $items = Items::all();
+        return View::make('index',
+            ['items' => $items]
+        );
     }
 
     /**
@@ -26,9 +30,9 @@ class IndexController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create($details)
+    public function create($title, $description)
     {
-        
+
     }
 
     /**
@@ -50,8 +54,7 @@ class IndexController extends Controller
      */
     public function show()
     {
-        $items = Items::all();
-        return view('list_table', ['items' => $items]);
+        //
     }
 
     /**
