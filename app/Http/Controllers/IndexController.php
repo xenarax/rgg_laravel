@@ -24,9 +24,9 @@ class IndexController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create($id)
+    public function create($details)
     {
-        //
+        
     }
 
     /**
@@ -46,9 +46,10 @@ class IndexController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        $items = Items::all();
+        return view('list_table', ['items' => $items]);
     }
 
     /**
