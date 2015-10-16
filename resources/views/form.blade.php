@@ -1,4 +1,4 @@
-{!! Form::open(array('url' => 'createItem', 'id' => 'formCreate', 'name' => 'formCreate', 'method' => 'post')) !!}
+{!! Form::open(array('url' => 'create', 'id' => 'formCreate', 'name' => 'formCreate', 'method' => 'post')) !!}
 
 <div class="form-group">
     {!! Form::Label('title', 'Title: ') !!}
