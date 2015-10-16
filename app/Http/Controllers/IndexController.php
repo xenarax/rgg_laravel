@@ -5,9 +5,11 @@ namespace App\Http\Controllers;
 use App\Items;
 use Illuminate\Http\Request;
 use App\Http\Requests;
+use DB;
+use BaseController;
+use View;
 use App\Http\Controllers\Controller;
 use Form;
-use View;
 
 class IndexController extends Controller
 {
@@ -32,18 +34,39 @@ class IndexController extends Controller
      */
     public function create($title, $description)
     {
+//        $title = $details->title;
+//        $description = $details->description;
+//        $status = "Not";
 
+        $title = $details;
+        $description = "Default";
+        $status = "Not";
+
+        $items = new items;
+        $items->title = $details;
+        $items->description = $description;
+        $items->status = $status;
+        $items->save();
+
+        echo "Created " . $title;
+        return View::make('index');
     }
 
+
     /**
-     * Store a newly created resource in storage.
+     * Remove the specified resource from storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function destroy($id)
     {
-        //
+        $items = Items::find($id); //select the book using primary id
+        $title = $items->title;
+        $items->delete();;
+
+        echo "Deleted " . $title;
+        return View::make('index');
     }
 
     /**
@@ -68,26 +91,6 @@ class IndexController extends Controller
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
+
 }
