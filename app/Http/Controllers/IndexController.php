@@ -27,8 +27,6 @@ class IndexController extends Controller
     public function create($id)
     {
         //
-        print_r(Items::findOrFail($id));
-        return view('create.index', ['items' => Items::findOrFail($id)]);
     }
 
     /**

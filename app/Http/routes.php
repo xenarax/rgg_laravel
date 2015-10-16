@@ -19,4 +19,4 @@ Route::get('/', function() {
     return view('index');
 });
 
-Route::get('create/{id}', 'IndexController@create');
+//Route::get('create/{id}', 'IndexController@create');
