@@ -18,7 +18,7 @@ class CreateItemsTable extends Migration
             $table->increments('id');
             $table->string('title', 255);
             $table->string('description', 255);
-            $table->string('status', 255);
+            $table->integer('status');
             $table->timestamps();
         });
     }
