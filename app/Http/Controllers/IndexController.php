@@ -36,9 +36,6 @@ class IndexController extends Controller
     {
         $title = $details->get('title');
         $description = $details->get('description');
-//        $status = "Not";
-
-
         $status = "Not";
 
         $items = new items;
@@ -46,12 +43,9 @@ class IndexController extends Controller
         $items->description = $description;
         $items->status = $status;
         $items->save();
-
-        echo "Created " . $title;
-
+//        echo "Created " . $title;
         return $this->index();
-//        redirect('index');
-//        return View::make('index');
+
     }
 
 
