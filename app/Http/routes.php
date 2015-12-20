@@ -16,6 +16,9 @@
 //});
 
 Route::get('/', 'IndexController@index');
+Route::get('/welcome', function () {
+    return view('welcome');
+});
 
 /**
  * Create and destroy item routing
