@@ -21,46 +21,9 @@ class IndexController extends Controller
     {
         //
         $items = Item::all();
-        return view('index', ['items' => $items]);
+        return view('index', compact('items'));
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create(Request $details)
-    {
-        $title = $details->get('title');
-        $description = $details->get('description');
-        $status = "Not";
-
-        $items = new Item;
-        $items->title = $title;
-        $items->description = $description;
-        $items->status = $status;
-        $items->save();
-
-        return redirect('/');
-    }
-
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        $items = Item::find($id); //select the book using primary id
-        $title = $items->title;
-        $items->delete();;
-
-        echo "Deleted " . $title;
-        return View::make('index');
-    }
-
+    
     /**
      * Display the specified resource.
      *
@@ -71,18 +34,4 @@ class IndexController extends Controller
     {
         //
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-
-
 }

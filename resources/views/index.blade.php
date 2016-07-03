@@ -15,4 +15,4 @@
         </div>
         @include('form')
     </div>
-@endsection
+@stop
